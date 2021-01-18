@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Federalist Search</title>
+  </head>
+  <body>
+    <div class="stork-wrapper">
+      <input data-stork="federalist" class="stork-input" />
+      <div data-stork="federalist-output" class="stork-output"></div>
+    </div>
+    <script src="https://files.stork-search.net/stork.js"></script>
+    <script>
+      stork.register(
+        "federalist",
+        "http://files.stork-search.net/federalist.st"
+      );
+    </script>
+  </body>
+  <head>
+    <title>Gov docs Search</title>
+  </head>
+  <body>
+    <div class="stork-wrapper">
+      <input data-stork="govDocs" class="stork-input" />
+      <div data-stork="govDocs-output" class="stork-output"></div>
+    </div>
+    <script src="https://files.stork-search.net/stork.js"></script>
+    <script>
+      stork.register(
+        "govDocs",
+        "https://geekjr.blob.core.windows.net/geekjr/docs.st"
+      );
+    </script>
+  </body>
+</html>
+<link rel="stylesheet" href="https://files.stork-search.net/basic.css" />

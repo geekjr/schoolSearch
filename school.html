@@ -1,0 +1,17 @@
+<head>
+  <title>School Search</title>
+  <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />
+  </head>
+  <body>
+    <div class="stork-wrapper">
+      <input data-stork="school" class="stork-input" />
+      <div data-stork="school-output" class="stork-output"></div>
+    </div>
+    <script src="https://files.stork-search.net/stork.js"></script>
+    <script>
+      stork.register(
+        "school",
+        "https://geekjr.blob.core.windows.net/geekjr/schoolNew.st"
+      );
+    </script>
+  </body>

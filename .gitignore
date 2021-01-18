@@ -1,0 +1,6 @@
+data/
+.vscode/
+docsTut/
+function/
+*.st
+*.toml
