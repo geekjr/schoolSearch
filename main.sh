@@ -1,12 +1,14 @@
 # Wget crawl command
+cd ~/crawling
 wget -r -p --html-extension -U --no-clobber Mozilla https://www.ncps-k12.org
+cd ..
 # Python .toml creation
-python getData.py
+python3 getData.py
 # Build index
 ./stork-ubuntu-latest --build toml.toml
 # Upload intexed file to Blob
-python upload.py
+python3 upload.py
 # Make a backup of the crawled data
 zip -r www.ncps-k12.org.zip ~/crawling/www.ncps-k12.org
-python backup.py
+python3 backup.py
 rm -r www.ncps-k12.org.zip

@@ -3,15 +3,15 @@ from bs4 import BeautifulSoup
 import codecs
 
 toml = open("toml.toml", "a")
-toml.write("[input]\nbase_directory = '~/crawing/www.ncps-k12.org/' \nurl_prefix = 'https://www.ncps-k12.org/' \nfiles = [")
+toml.write("[input]\nbase_directory = '/home/azureuser/crawling/www.ncps-k12.org' \nurl_prefix = 'https://www.ncps-k12.org/' \nfiles = [")
 
-for file in os.listdir("~/crawling/www.ncps-k12.org/Page"):
+for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
     if file.endswith(".html"):
         try:
             pageNumber = str(file).split(".")[0]
             url = f"Page/{pageNumber}"
             f = codecs.open(
-                '~/crawling/www.ncps-k12.org/Page/' + file, "r", 'utf-8')
+                '/home/azureuser/crawling/www.ncps-k12.org/Page/' + file, "r", 'utf-8')
             parsed_html = BeautifulSoup(f.read(), features="html.parser")
             title = parsed_html.find(
                 'title').text
@@ -21,7 +21,7 @@ for file in os.listdir("~/crawling/www.ncps-k12.org/Page"):
             pageNumber = str(file).split(".")[0]
             url = f"Page/{pageNumber}"
             f = codecs.open(
-                './data/school/www.ncps-k12.org/Page/' + file, "r", 'latin-1')
+                '/home/azureuser/crawling/www.ncps-k12.org/Page/' + file, "r", 'latin-1')
             parsed_html = BeautifulSoup(f.read(), features="html.parser")
             title = parsed_html.find(
                 'title').text
