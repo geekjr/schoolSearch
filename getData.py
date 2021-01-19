@@ -45,7 +45,7 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
                        str(url) + "', title = '" + str(title).replace('"', '').replace("'", '') + "'},")
         except:
             continue
-        '''
+            '''
 
 toml.write("\n]\n[output]\nfilename = 'school.st'")
 toml.close()
