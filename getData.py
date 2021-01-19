@@ -11,14 +11,14 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
             pageNumber = str(file).split(".")[0]
             url = f"Page/{pageNumber}"
             f = codecs.open(
-                '/home/azureuser/crawling/www.ncps-k12.org/Page/' + file, "r", 'utf-8')
+                '/home/azureuser/crawling/www.ncps-k12.org/Page/' + file, "r")
             parsed_html = BeautifulSoup(f.read(), features="html.parser")
             title = parsed_html.find(
                 'title').text
             print("{path = '" + str('Page/'+file) + "', url = '" +
                   str(url) + "', title = '" + str(title) + "'},")
+        '''
         except:
-            '''
             pageNumber = str(file).split(".")[0]
             url = f"Page/{pageNumber}"
             f = codecs.open(
@@ -30,7 +30,6 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
                   str(url) + "', title = '" + str(title).replace('"', '') + "'},")
             toml.write("\n{path = '" + str('Page/'+file) + "', url = '" +
                        str(url) + "', title = '" + str(title).replace('"', '').replace("'", '') + "'},")
-            '''
             continue
         try:
             pageNumber = str(file).split(".")[0]
@@ -46,6 +45,7 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
                        str(url) + "', title = '" + str(title).replace('"', '').replace("'", '') + "'},")
         except:
             continue
+        '''
 
 toml.write("\n]\n[output]\nfilename = 'school.st'")
 toml.close()

@@ -4,3 +4,4 @@ docsTut/
 function/
 *.st
 *.toml
+.idea/
