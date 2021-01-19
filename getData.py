@@ -17,6 +17,8 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
                 'title').text
             print("{path = '" + str('Page/'+file) + "', url = '" +
                   str(url) + "', title = '" + str(title) + "'},")
+            toml.write("\n{path = '" + str('Page/' + file) + "', url = '" +
+                       str(url) + "', title = '" + str(title).replace('"', '').replace("'", '') + "'},")
         except:
             continue
         """
