@@ -17,7 +17,9 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
                 'title').text
             print("{path = '" + str('Page/'+file) + "', url = '" +
                   str(url) + "', title = '" + str(title) + "'},")
-        '''
+        except:
+            continue
+        """
         except:
             pageNumber = str(file).split(".")[0]
             url = f"Page/{pageNumber}"
@@ -43,9 +45,7 @@ for file in os.listdir("/home/azureuser/crawling/www.ncps-k12.org/Page"):
                   str(url) + "', title = '" + str(title).replace('"', '') + "'},")
             toml.write("\n{path = '" + str('Page/' + file) + "', url = '" +
                        str(url) + "', title = '" + str(title).replace('"', '').replace("'", '') + "'},")
-        except:
-            continue
-            '''
+        """
 
 toml.write("\n]\n[output]\nfilename = 'school.st'")
 toml.close()
